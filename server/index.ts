@@ -48,7 +48,7 @@ app.use(express.urlencoded({ extended: false, limit: '15mb' }));
 app.use((req, res, next) => {
   res.setHeader('X-Frame-Options', 'ALLOWALL');
   res.setHeader('Content-Security-Policy', "frame-ancestors *");
-
+  
   // Force clients to always fetch fresh JavaScript/CSS (prevent old cached code from running)
   // Cover all asset paths including Vite's /assets/... and root-level files
   if (req.path.endsWith('.js') || req.path.endsWith('.css') || req.path.endsWith('.html') || req.path.startsWith('/assets/')) {
@@ -56,7 +56,7 @@ app.use((req, res, next) => {
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
   }
-
+  
   next();
 });
 
@@ -114,15 +114,19 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  const port = parseInt(process.env.PORT || '5000', 10);
-
+  const port = parseInt(process.env.PORT || '9900', 10);
+  
   // Strict check for environment variables in production
   if (process.env.NODE_ENV === 'production') {
     // JSON file storage - no external database required
     console.log('Using JSON file storage');
   }
 
-  server.listen(port, "127.0.0.1", () => {
+  server.listen({
+    port,
+    host: "0.0.0.0",
+    reusePort: true,
+  }, () => {
     log(`serving on port ${port}`);
   });
 })();
