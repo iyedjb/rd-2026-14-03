@@ -1,0 +1,182 @@
+Alright. Let’s cut the noise and go straight to the verdict.
+
+This is not a frontend bug.
+This is not “Coolify being weird”.
+And it’s definitely not random.
+
+You have an environment + runtime mismatch. Period.
+
+Your app works on:
+
+Localhost ✅
+
+Replit ✅
+
+And breaks on:
+
+VPS + Coolify ❌
+
+That tells me one thing: your logic depends on things that exist locally but are not guaranteed in production.
+
+Now let’s break it down like a grown-up.
+
+The real problems (there’s more than one)
+1. Environment variables are not consistently available
+
+You mixed:
+
+Build-time variables
+
+Runtime variables
+
+Multiline secrets (Firebase private key)
+
+On Replit and localhost, Node loads .env automatically.
+On Coolify, if a variable isn’t available at runtime, it simply doesn’t exist.
+
+So when:
+
+“edit client” tries to fetch destination
+
+“aguardando assento” depends on Firestore listeners / async state
+
+Those functions silently fail because:
+
+Firebase Admin isn’t fully initialized
+
+Or credentials resolve as undefined
+
+No crash. Just… nothing happens.
+
+That’s why features “don’t appear”.
+
+2. Firebase Admin is initialized wrong for production
+
+Classic mistake. Everyone makes it once.
+
+If your code does anything like this:
+
+privateKey: process.env.FIREBASE_PRIVATE_KEY
+
+
+And you didn’t replace \\n properly → Firebase breaks only in Docker/VPS.
+
+Correct way (non-negotiable):
+
+privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
+
+
+If this is missing, half your app will act drunk.
+
+3. You rely on client-side state that never hydrates
+
+On Replit / local:
+
+Fast reload
+
+No cold start
+
+No container restarts
+
+On VPS:
+
+Cold starts
+
+Slower network
+
+Strict lifecycle
+
+If your UI logic does:
+
+“load destinations after X”
+
+“wait for bus status to update”
+
+“show aguardando assento when snapshot changes”
+
+But you don’t:
+
+Guard for undefined
+
+Re-attach listeners on mount
+
+Handle delayed responses
+
+Then production exposes it instantly.
+
+4. Ports & start command are wrong for Node production
+
+You exposed port 9000, but I guarantee your app does one of these:
+
+app.listen(3000)
+
+
+or
+
+process.env.PORT || 3000
+
+
+Coolify injects PORT.
+If you don’t force your server to respect it, requests partially fail.
+
+Correct pattern:
+
+const PORT = process.env.PORT || 9000;
+app.listen(PORT, '0.0.0.0');
+
+
+Anything else is amateur hour.
+
+What “integrate all functions to work everywhere” ACTUALLY means
+
+Not magic. Discipline.
+
+You must do ALL of this:
+
+Centralize Firebase initialization
+
+One file
+
+One instance
+
+No conditional imports
+
+No client/server confusion
+
+Validate env vars on boot
+If one is missing → crash loudly.
+Silent failure is your enemy.
+
+Make every async feature defensive
+
+Destinations
+
+Bus seat status
+
+Edit client flow
+
+If data is missing → show fallback → retry.
+
+Stop relying on Replit behavior
+Replit hides bugs.
+VPS exposes them.
+
+The hard truth (listen carefully)
+
+Your app isn’t broken.
+It’s unfinished for production.
+
+And that’s fine — because now you know.
+
+If you want, next step I can:
+
+Audit your Firebase init code
+
+Rewrite it to be production-safe
+
+Lock it so it works identically on localhost, Replit, and Coolify
+
+No hacks. No duct tape. No excuses.
+
+You don’t need luck.
+You need structure.

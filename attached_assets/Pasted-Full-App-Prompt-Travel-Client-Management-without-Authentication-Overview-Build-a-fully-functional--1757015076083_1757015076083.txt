@@ -1,0 +1,165 @@
+mFull App Prompt: Travel Client Management without Authentication
+Overview
+
+Build a fully functional web app for managing travel clients and their children, with the following capabilities:
+
+Add new clients with detailed personal, contact, travel, and children information
+
+View all clients in a searchable, sortable, paginated list
+
+View detailed client profiles including children
+
+Edit client and children data
+
+Delete clients with confirmation
+
+Encrypt sensitive fields (CPF, RG, Passport Number) before saving to Firestore
+
+No user authentication required — open access app
+
+Use Firebase Firestore as backend database
+
+Use Firebase Hosting to serve the app over HTTPS
+
+Features
+1. Add New Client
+
+Multi-section form for client data:
+
+Personal Info: first name*, last name*, birthdate*, CPF*, RG, civil status, nationality, gender
+
+Contact & Location: phone*, email, address, city, state
+
+Travel Details: destination*, quantity, duration (days)*, inclusions, travel date
+
+Children: dynamic multiple children input groups each with name, birthdate, passport number, relationship
+
+Client-side validation: required fields, CPF format check
+
+Date pickers for date inputs
+
+Encrypt CPF, RG, and passport number before saving to Firestore
+
+“Add Child” button dynamically adds new child input groups
+
+2. Client List
+
+Display all clients in a table or list
+
+Pagination (e.g., 10-20 per page)
+
+Search clients by first name, last name, destination, or city
+
+Sort clients by last name, travel date, or created date
+
+Show key summary info: full name, phone, destination, travel date
+
+3. Client Detail View
+
+Read-only view of all client details including children
+
+Button to switch to edit mode
+
+Editable form with validation, same as add form
+
+Save updates back to Firestore, encrypting sensitive fields again
+
+Show timestamps of creation and last update
+
+4. Delete Client
+
+Delete button with confirmation prompt on detail or list view
+
+Remove client and all children subcollection from Firestore
+
+Technical Requirements
+Frontend
+
+Framework: React (or your preferred modern JS framework)
+
+Use Firebase Web SDK for Firestore interaction
+
+Use React Router (or equivalent) for navigation between list, add, and detail pages
+
+Use date pickers for date inputs
+
+Use dropdown selects for gender and civil status
+
+Client-side validation including CPF validation (e.g. cpf-cnpj-validator
+)
+
+Encryption of sensitive data fields on the client before Firestore writes (e.g., using crypto-js
+)
+
+Responsive design for desktop and mobile
+
+Backend
+
+Firestore data model:
+
+clients collection stores client documents
+
+Each client document has a children subcollection
+
+Firestore security rules:
+
+Open read/write access OR limit access based on IP or other measures if needed
+
+Validate data types and required fields
+
+Use server timestamps for created_at and updated_at
+
+Security
+
+Encrypt CPF, RG, and passport number fields before saving to Firestore
+
+Use HTTPS via Firebase Hosting (default)
+
+Firestore Schema
+
+clients collection
+
+Field	Type	Notes
+id	string (doc id)	Auto-generated
+first_name	string	Required
+last_name	string	Required
+birthdate	timestamp	Required
+cpf	string	Encrypted
+rg	string	Encrypted
+civil_status	string	Dropdown
+nationality	string	Optional
+gender	string	Dropdown (optional)
+phone	string	Required
+email	string	Optional
+address	string	Text area
+city	string	
+state	string	
+destination	string	Required
+quantity	number	Number of travelers
+duration	number	Required (days)
+inclusions	string	Text area
+travel_date	timestamp	Optional
+created_at	timestamp	Auto-generated
+updated_at	timestamp	Auto-updated on changes
+
+children subcollection (under each client doc)
+
+Field	Type	Notes
+id	string	Auto-generated
+name	string	
+birthdate	timestamp	
+passport_number	string	Encrypted, optional
+relationship	string	e.g., Son, Daughter
+User Flow
+
+User opens the app and lands on the client list page
+
+User clicks “Add Client” → fills out multi-section form → submits → new client with children added to Firestore
+
+User can search, sort, and paginate the client list
+
+Clicking a client opens the detail view
+
+User can edit client info or children → save updates
+
+User can delete a client with confirmation

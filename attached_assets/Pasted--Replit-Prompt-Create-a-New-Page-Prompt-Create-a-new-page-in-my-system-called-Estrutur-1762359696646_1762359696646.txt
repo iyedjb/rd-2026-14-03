@@ -1,0 +1,117 @@
+🧠 
+Replit Prompt — Create a New Page
+
+
+Prompt:
+Create a new page in my system called "Estrutura Organizacional da Agência".
+
+This page should show the entire organizational structure of the agency in a single page layout, well-designed, modern, and easy to navigate.
+
+The page must start with a header that contains:
+The main title: "Estrutura Organizacional da Agência"
+A subtitle below it: "Conheça todos os setores, funções e responsabilidades que compõem nossa agência."
+A horizontal line or subtle divider after the subtitle.
+
+Below the header, add a navigation bar or a set of buttons that allow the user to scroll to each section of the structure. Each button should represent a department name:
+Diretoria / Gestão Estratégica
+Administrativo-Financeiro
+Atendimento ao Cliente
+Comercial / Vendas
+Marketing e Comunicação
+Produtos e Operações
+Tecnologia e Inovação
+Recursos Humanos (RH)
+Planejamento e Estratégia
+
+The layout should be a single page, divided into expandable sections (accordions). Each section expands when clicked, showing its detailed information.
+
+Every department section must be visually separated with soft borders or shaded boxes, using a clean style — white background, soft shadows, rounded corners, and blue highlights for titles.
+
+Each section should follow this structure:
+Department Title
+(Example: "Diretoria / Gestão Estratégica")
+
+Função: A short paragraph describing what this department does.
+
+Responsável: If applicable, show who is responsible for that department.
+
+Subsetores e Funções:
+A list of key areas and what they handle. Use clear bullet points for readability.
+The detailed content for each department is as follows:
+
+1. Diretoria / Gestão Estratégica
+Função: Tomar decisões estratégicas e supervisionar os resultados globais da empresa.
+Responsável: Proprietário(a) / Diretor(a)
+Principais responsabilidades:
+Planejamento estratégico e metas anuais
+Parcerias e negociações com fornecedores
+Controle financeiro geral e orçamento
+Definição de políticas internas e cultura organizacional
+Avaliação de desempenho dos setores
+
+2. Departamento Administrativo-Financeiro
+Função: Gerir os recursos da agência, garantir o equilíbrio financeiro e cuidar da parte legal.
+Subsetores e Funções:
+Financeiro: controle de contas a pagar/receber, fluxo de caixa e conciliação bancária.
+Contabilidade: emissão de notas fiscais, fechamento mensal e contato com contador.
+Administrativo: controle de contratos, documentos, fornecedores e infraestrutura.
+Jurídico: análise de contratos e conformidade legal.
+
+3. Departamento de Atendimento ao Cliente
+Função: Atender e acompanhar o cliente em todas as etapas — pré e pós-venda.
+Subsetores e Funções:
+Atendimento presencial, WhatsApp e redes sociais: responder dúvidas e captar leads.
+Pós-venda: acompanhamento após a compra, feedbacks e fidelização.
+Atendimento automatizado: chatbots e fluxos automáticos para consultas rápidas.
+
+4. Departamento Comercial / Vendas
+Função: Converter oportunidades em vendas e manter relacionamento com clientes e empresas parceiras.
+Subsetores e Funções:
+Consultores de viagem: criação de orçamentos personalizados e fechamento de pacotes.
+Gestão de leads: controle e acompanhamento dos contatos recebidos.
+Parcerias corporativas: atendimento a empresas, convênios e programas de benefícios.
+Gestão de metas e comissões: controle de performance da equipe de vendas.
+
+5. Departamento de Marketing e Comunicação
+Função: Promover a marca, gerar visibilidade e atrair novos clientes.
+Subsetores e Funções:
+Marketing digital: gestão de redes sociais, tráfego pago e e-mail marketing.
+Design e conteúdo: criação de posts, vídeos e materiais promocionais.
+Planejamento de campanhas e datas sazonais (ex.: Black Friday, férias, feriados).
+Relacionamento e engajamento: promoções, sorteios e parcerias locais.
+
+6. Departamento de Produtos e Operações
+Função: Criar, organizar e operacionalizar os pacotes de viagem.
+Subsetores e Funções:
+Montagem de pacotes: definição de roteiros, hospedagens, transportes e guias.
+Negociação com fornecedores: hotéis, companhias aéreas e seguradoras.
+Gestão de reservas e documentos: emissão de vouchers, passagens e seguros.
+Controle de disponibilidade e logística: monitoramento das viagens em andamento.
+
+7. Departamento de Tecnologia e Inovação
+Função: Automatizar processos e integrar sistemas.
+Subsetores e Funções:
+Sistema de gestão de clientes e vendas (CRM).
+Automação de atendimento (chatbot, WhatsApp Business, e-mail).
+Gestão de dados e relatórios de desempenho.
+Integração com plataformas de reservas e meios de pagamento.
+
+8. Departamento de Recursos Humanos (RH)
+Função: Cuidar da equipe, desenvolvimento profissional e clima organizacional.
+Subsetores e Funções:
+Recrutamento e seleção.
+Treinamento e capacitação.
+Gestão de desempenho e metas.
+Benefícios, folha de pagamento, motivação e reconhecimento.
+
+9. Departamento de Planejamento e Estratégia
+Função: Analisar o desempenho da empresa e propor melhorias.
+Subsetores e Funções:
+Análise de mercado e concorrência.
+Planejamento anual e sazonal de vendas.
+Relatórios e indicadores (KPIs).
+Planejamento de expansão e novos serviços.
+At the bottom of the page, include a footer that says:
+"© 2025 Agência — Estrutura Organizacional. Todos os direitos reservados."
+
+Also, add a 'Voltar ao topo' button fixed in the bottom-right corner, that smoothly scrolls to the top when clicked.

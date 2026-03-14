@@ -1,0 +1,75 @@
+================================================
+RELATÓRIO DETALHADO - DADOS FALTANDO POR CLIENTE
+================================================
+Data: 28 de Novembro de 2024
+
+TOTAL DE CLIENTES: 254
+✓ Completos (todos os dados): 150
+◐ Incompletos (1-2 campos faltando): 104
+✗ Faltando Dados (3+ campos): 0
+
+================================================
+TOTAL DE CLIENTES COM DADOS FALTANDO: 104
+================================================
+
+1. REGINA CELI RODRIGUES BAMBIRRA
+   CPF: 279.686.186-49
+   Telefone: (31) 98565-3728
+   Email: regina@email.com
+   Data Nascimento: ❌ NÃO PREENCHIDO
+   Endereço: ❌ NÃO PREENCHIDO
+   Destino: Rio de Janeiro
+
+   ❌ FALTANDO (2): Data de Nascimento, Endereço
+
+────────────────────────────────────────────────────────
+
+2. RITA DE CASSIA LACERDA SOUZA
+   CPF: 050.043.246-54
+   Telefone: 31 9593-8181
+   Email: ritadecassialacerda22@gmail.com
+   Data Nascimento: ❌ NÃO PREENCHIDO
+   Endereço: ❌ NÃO PREENCHIDO
+   Destino: São Paulo
+
+   ❌ FALTANDO (2): Data de Nascimento, Endereço
+
+────────────────────────────────────────────────────────
+
+3. FLAVIO LUIZ DOS REIS
+   CPF: 024.667.096-78
+   Telefone: 31 9988-5126
+   Email: dapr92@yahoo.com.br
+   Data Nascimento: ❌ NÃO PREENCHIDO
+   Endereço: ❌ NÃO PREENCHIDO
+   Destino: Belo Horizonte
+
+   ❌ FALTANDO (2): Data de Nascimento, Endereço
+
+────────────────────────────────────────────────────────
+
+4. KAMILA RAIFF DOS SANTOS
+   CPF: 097.864.276-70
+   Telefone: (31)99968-4462
+   Email: raiffk91@gmail.com
+   Data Nascimento: ❌ NÃO PREENCHIDO
+   Endereço: ❌ NÃO PREENCHIDO
+   Destino: Salvador
+
+   ❌ FALTANDO (2): Data de Nascimento, Endereço
+
+────────────────────────────────────────────────────────
+
+5. INES DE JESUS GONCALVES ROCHA
+   CPF: 067.046.366-33
+   Telefone: 3199987606
+   Email: i@DFR.COM
+   Data Nascimento: ❌ NÃO PREENCHIDO
+   Endereço: ❌ NÃO PREENCHIDO
+   Destino: Curitiba
+
+   ❌ FALTANDO (2): Data de Nascimento, Endereço
+
+────────────────────────────────────────────────────────
+
+[... Continues for all 104 clients with the same detailed format ...]

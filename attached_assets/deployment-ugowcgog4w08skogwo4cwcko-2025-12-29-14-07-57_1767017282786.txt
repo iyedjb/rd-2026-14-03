@@ -1,0 +1,527 @@
+2025-Dec-29 14:06:27.485229 Starting deployment of iyedjb/newupdaterodabbem2.0:main to localhost.
+2025-Dec-29 14:06:27.744942 Preparing container with helper image: ghcr.io/coollabsio/coolify-helper:1.0.12
+2025-Dec-29 14:06:27.866339 [CMD]: docker stop -t 30 ugowcgog4w08skogwo4cwcko
+2025-Dec-29 14:06:27.866339 Error response from daemon: No such container: ugowcgog4w08skogwo4cwcko
+2025-Dec-29 14:06:28.071851 [CMD]: docker run -d --network coolify --name ugowcgog4w08skogwo4cwcko --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/coollabsio/coolify-helper:1.0.12
+2025-Dec-29 14:06:28.071851 88b898e60d7f8f9cfd8786de30ba9b71eea77bea47e43aea79a8c05c49d52d7b
+2025-Dec-29 14:06:30.564333 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'GIT_SSH_COMMAND="ssh -o ConnectTimeout=30 -p 22 -o Port=22 -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git ls-remote https://x-access-token:<REDACTED>@github.com/iyedjb/newupdaterodabbem2.0.git refs/heads/main'
+2025-Dec-29 14:06:30.564333 170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5 refs/heads/main
+2025-Dec-29 14:06:30.703601 Image not found (ywgo4w8sk8ggc8w0ooksog0k:170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5). Building new image.
+2025-Dec-29 14:06:30.943172 ----------------------------------------
+2025-Dec-29 14:06:30.949177 Importing iyedjb/newupdaterodabbem2.0:main (commit sha 170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5) to /artifacts/ugowcgog4w08skogwo4cwcko.
+2025-Dec-29 14:06:31.161859 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'git clone --depth=1 --recurse-submodules --shallow-submodules -b 'main' 'https://x-access-token:<REDACTED>@github.com/iyedjb/newupdaterodabbem2.0.git' '/artifacts/ugowcgog4w08skogwo4cwcko' && cd '/artifacts/ugowcgog4w08skogwo4cwcko' && if [ -f .gitmodules ]; then git submodule sync && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git submodule update --init --recursive --depth=1; fi && cd '/artifacts/ugowcgog4w08skogwo4cwcko' && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git lfs pull'
+2025-Dec-29 14:06:31.161859 Cloning into '/artifacts/ugowcgog4w08skogwo4cwcko'...
+2025-Dec-29 14:06:33.919911 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'cd /artifacts/ugowcgog4w08skogwo4cwcko && git log -1 170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5 --pretty=%B'
+2025-Dec-29 14:06:33.919911 Update word-generator.ts
+2025-Dec-29 14:06:34.356760 Generating nixpacks configuration with: nixpacks plan -f json --env NIXPACKS_NODE_VERSION=22 --env COOLIFY_URL=https://sistema.rodabemturismo.com/ --env COOLIFY_FQDN=sistema.rodabemturismo.com/ --env COOLIFY_BRANCH=main --env COOLIFY_RESOURCE_UUID=ywgo4w8sk8ggc8w0ooksog0k --build-cmd "npm run build" --start-cmd "npm start" /artifacts/ugowcgog4w08skogwo4cwcko
+2025-Dec-29 14:06:34.756137 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'nixpacks plan -f json --env NIXPACKS_NODE_VERSION=22 --env COOLIFY_URL=https://sistema.rodabemturismo.com/ --env COOLIFY_FQDN=sistema.rodabemturismo.com/ --env COOLIFY_BRANCH=main --env COOLIFY_RESOURCE_UUID=ywgo4w8sk8ggc8w0ooksog0k --build-cmd "npm run build" --start-cmd "npm start" /artifacts/ugowcgog4w08skogwo4cwcko'
+2025-Dec-29 14:06:34.756137 {
+2025-Dec-29 14:06:34.756137 "providers": [],
+2025-Dec-29 14:06:34.756137 "buildImage": "ghcr.io/railwayapp/nixpacks:ubuntu-1745885067",
+2025-Dec-29 14:06:34.756137 "variables": {
+2025-Dec-29 14:06:34.756137 "CI": "true",
+2025-Dec-29 14:06:34.756137 "COOLIFY_BRANCH": "main",
+2025-Dec-29 14:06:34.756137 "COOLIFY_FQDN": "sistema.rodabemturismo.com/",
+2025-Dec-29 14:06:34.756137 "COOLIFY_RESOURCE_UUID": "ywgo4w8sk8ggc8w0ooksog0k",
+2025-Dec-29 14:06:34.756137 "COOLIFY_URL": "https://sistema.rodabemturismo.com/",
+2025-Dec-29 14:06:34.756137 "NIXPACKS_METADATA": "node",
+2025-Dec-29 14:06:34.756137 "NIXPACKS_NODE_VERSION": "22",
+2025-Dec-29 14:06:34.756137 "NIXPACKS_SPA_OUTPUT_DIR": "dist",
+2025-Dec-29 14:06:34.756137 "NODE_ENV": "production",
+2025-Dec-29 14:06:34.756137 "NPM_CONFIG_PRODUCTION": "false"
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "staticAssets": {
+2025-Dec-29 14:06:34.756137 "Caddyfile": "# global options\n{\n\tadmin off # theres no need for the admin api in railway's environment\n\tpersist_config off # storage isn't persistent anyway\n\tauto_https off # railway handles https for us, this would cause issues if left enabled\n\t# runtime logs\n\tlog {\n\t\tformat json # set runtime log format to json mode \n\t}\n\t# server options\n\tservers {\n\t\ttrusted_proxies static private_ranges 100.0.0.0/8 # trust railway's proxy\n\t}\n}\n\n# site block, listens on the $PORT environment variable, automatically assigned by railway\n:{$PORT:3000} {\n\t# access logs\n\tlog {\n\t\tformat json # set access log format to json mode\n\t}\n\n\t# health check for railway\n\trewrite /health /*\n\n\t# serve from the 'dist' folder (Vite builds into the 'dist' folder)\n root * ../app/{$NIXPACKS_SPA_OUTPUT_DIR}\n\n\t# enable gzipping responses\n\tencode gzip\n\n\t# serve files from 'dist'\n\tfile_server \n\n\t# if path doesn't exist, redirect it to 'index.html' for client side routing\n\ttry_files {path} /index.html\n}"
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "phases": {
+2025-Dec-29 14:06:34.756137 "build": {
+2025-Dec-29 14:06:34.756137 "dependsOn": [
+2025-Dec-29 14:06:34.756137 "install"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "cmds": [
+2025-Dec-29 14:06:34.756137 "npm run build"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "cacheDirectories": [
+2025-Dec-29 14:06:34.756137 "node_modules/.cache"
+2025-Dec-29 14:06:34.756137 ]
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "caddy": {
+2025-Dec-29 14:06:34.756137 "dependsOn": [
+2025-Dec-29 14:06:34.756137 "setup"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "nixPkgs": [
+2025-Dec-29 14:06:34.756137 "caddy"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "nixOverlays": [],
+2025-Dec-29 14:06:34.756137 "nixpkgsArchive": "ba913eda2df8eb72147259189d55932012df6301",
+2025-Dec-29 14:06:34.756137 "cmds": [
+2025-Dec-29 14:06:34.756137 "caddy fmt --overwrite /assets/Caddyfile"
+2025-Dec-29 14:06:34.756137 ]
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "install": {
+2025-Dec-29 14:06:34.756137 "dependsOn": [
+2025-Dec-29 14:06:34.756137 "setup"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "cmds": [
+2025-Dec-29 14:06:34.756137 "npm ci"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "cacheDirectories": [
+2025-Dec-29 14:06:34.756137 "/root/.npm"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "paths": [
+2025-Dec-29 14:06:34.756137 "/app/node_modules/.bin"
+2025-Dec-29 14:06:34.756137 ]
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "setup": {
+2025-Dec-29 14:06:34.756137 "nixPkgs": [
+2025-Dec-29 14:06:34.756137 "nodejs_22",
+2025-Dec-29 14:06:34.756137 "npm-9_x",
+2025-Dec-29 14:06:34.756137 "openssl"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "nixLibs": [
+2025-Dec-29 14:06:34.756137 "libuuid",
+2025-Dec-29 14:06:34.756137 "libGL"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "nixOverlays": [
+2025-Dec-29 14:06:34.756137 "https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.gz"
+2025-Dec-29 14:06:34.756137 ],
+2025-Dec-29 14:06:34.756137 "nixpkgsArchive": "ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7"
+2025-Dec-29 14:06:34.756137 }
+2025-Dec-29 14:06:34.756137 },
+2025-Dec-29 14:06:34.756137 "start": {
+2025-Dec-29 14:06:34.756137 "cmd": "npm start"
+2025-Dec-29 14:06:34.756137 }
+2025-Dec-29 14:06:34.767258 }
+2025-Dec-29 14:06:34.997012 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'nixpacks detect /artifacts/ugowcgog4w08skogwo4cwcko'
+2025-Dec-29 14:06:34.997012 node
+2025-Dec-29 14:06:35.013329 Found application type: node.
+2025-Dec-29 14:06:35.019852 If you need further customization, please check the documentation of Nixpacks: https://nixpacks.com/docs/providers/node
+2025-Dec-29 14:06:35.026628 Final Nixpacks plan: {
+2025-Dec-29 14:06:35.026628 "providers": [],
+2025-Dec-29 14:06:35.026628 "buildImage": "ghcr.io\/railwayapp\/nixpacks:ubuntu-1745885067",
+2025-Dec-29 14:06:35.026628 "variables": {
+2025-Dec-29 14:06:35.026628 "CI": "true",
+2025-Dec-29 14:06:35.026628 "COOLIFY_BRANCH": "main",
+2025-Dec-29 14:06:35.026628 "COOLIFY_FQDN": "sistema.rodabemturismo.com\/",
+2025-Dec-29 14:06:35.026628 "COOLIFY_RESOURCE_UUID": "ywgo4w8sk8ggc8w0ooksog0k",
+2025-Dec-29 14:06:35.026628 "COOLIFY_URL": "https:\/\/sistema.rodabemturismo.com\/",
+2025-Dec-29 14:06:35.026628 "NIXPACKS_METADATA": "node",
+2025-Dec-29 14:06:35.026628 "NIXPACKS_NODE_VERSION": "22",
+2025-Dec-29 14:06:35.026628 "NIXPACKS_SPA_OUTPUT_DIR": "dist",
+2025-Dec-29 14:06:35.026628 "NODE_ENV": "production",
+2025-Dec-29 14:06:35.026628 "NPM_CONFIG_PRODUCTION": "false"
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "staticAssets": {
+2025-Dec-29 14:06:35.026628 "Caddyfile": "# global options\n{\n\tadmin off # theres no need for the admin api in railway's environment\n\tpersist_config off # storage isn't persistent anyway\n\tauto_https off # railway handles https for us, this would cause issues if left enabled\n\t# runtime logs\n\tlog {\n\t\tformat json # set runtime log format to json mode \n\t}\n\t# server options\n\tservers {\n\t\ttrusted_proxies static private_ranges 100.0.0.0\/8 # trust railway's proxy\n\t}\n}\n\n# site block, listens on the $PORT environment variable, automatically assigned by railway\n:{$PORT:3000} {\n\t# access logs\n\tlog {\n\t\tformat json # set access log format to json mode\n\t}\n\n\t# health check for railway\n\trewrite \/health \/*\n\n\t# serve from the 'dist' folder (Vite builds into the 'dist' folder)\n root * ..\/app\/{$NIXPACKS_SPA_OUTPUT_DIR}\n\n\t# enable gzipping responses\n\tencode gzip\n\n\t# serve files from 'dist'\n\tfile_server \n\n\t# if path doesn't exist, redirect it to 'index.html' for client side routing\n\ttry_files {path} \/index.html\n}"
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "phases": {
+2025-Dec-29 14:06:35.026628 "build": {
+2025-Dec-29 14:06:35.026628 "dependsOn": [
+2025-Dec-29 14:06:35.026628 "install"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "cmds": [
+2025-Dec-29 14:06:35.026628 "npm run build"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "cacheDirectories": [
+2025-Dec-29 14:06:35.026628 "node_modules\/.cache"
+2025-Dec-29 14:06:35.026628 ]
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "caddy": {
+2025-Dec-29 14:06:35.026628 "dependsOn": [
+2025-Dec-29 14:06:35.026628 "setup"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "nixPkgs": [
+2025-Dec-29 14:06:35.026628 "caddy"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "nixOverlays": [],
+2025-Dec-29 14:06:35.026628 "nixpkgsArchive": "ba913eda2df8eb72147259189d55932012df6301",
+2025-Dec-29 14:06:35.026628 "cmds": [
+2025-Dec-29 14:06:35.026628 "caddy fmt --overwrite \/assets\/Caddyfile"
+2025-Dec-29 14:06:35.026628 ]
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "install": {
+2025-Dec-29 14:06:35.026628 "dependsOn": [
+2025-Dec-29 14:06:35.026628 "setup"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "cmds": [
+2025-Dec-29 14:06:35.026628 "npm ci"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "cacheDirectories": [
+2025-Dec-29 14:06:35.026628 "\/root\/.npm"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "paths": [
+2025-Dec-29 14:06:35.026628 "\/app\/node_modules\/.bin"
+2025-Dec-29 14:06:35.026628 ]
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "setup": {
+2025-Dec-29 14:06:35.026628 "nixPkgs": [
+2025-Dec-29 14:06:35.026628 "nodejs_22",
+2025-Dec-29 14:06:35.026628 "npm-9_x",
+2025-Dec-29 14:06:35.026628 "openssl"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "nixLibs": [
+2025-Dec-29 14:06:35.026628 "libuuid",
+2025-Dec-29 14:06:35.026628 "libGL"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "nixOverlays": [
+2025-Dec-29 14:06:35.026628 "https:\/\/github.com\/railwayapp\/nix-npm-overlay\/archive\/main.tar.gz"
+2025-Dec-29 14:06:35.026628 ],
+2025-Dec-29 14:06:35.026628 "nixpkgsArchive": "ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7",
+2025-Dec-29 14:06:35.026628 "aptPkgs": [
+2025-Dec-29 14:06:35.026628 "curl",
+2025-Dec-29 14:06:35.026628 "wget"
+2025-Dec-29 14:06:35.026628 ]
+2025-Dec-29 14:06:35.026628 }
+2025-Dec-29 14:06:35.026628 },
+2025-Dec-29 14:06:35.026628 "start": {
+2025-Dec-29 14:06:35.026628 "cmd": "npm start"
+2025-Dec-29 14:06:35.026628 }
+2025-Dec-29 14:06:35.026628 }
+2025-Dec-29 14:06:35.604326 Creating build-time .env file in /artifacts (outside Docker context).
+2025-Dec-29 14:06:36.006606 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'cat /artifacts/build-time.env'
+2025-Dec-29 14:06:36.006606 CI='true'
+2025-Dec-29 14:06:36.006606 NIXPACKS_METADATA='node'
+2025-Dec-29 14:06:36.006606 NIXPACKS_NODE_VERSION="22"
+2025-Dec-29 14:06:36.006606 NIXPACKS_SPA_OUTPUT_DIR='dist'
+2025-Dec-29 14:06:36.006606 NODE_ENV='production'
+2025-Dec-29 14:06:36.006606 NPM_CONFIG_PRODUCTION='false'
+2025-Dec-29 14:06:36.006606 COOLIFY_URL='https://sistema.rodabemturismo.com/'
+2025-Dec-29 14:06:36.006606 COOLIFY_FQDN='sistema.rodabemturismo.com/'
+2025-Dec-29 14:06:36.006606 COOLIFY_BRANCH='main'
+2025-Dec-29 14:06:36.006606 COOLIFY_RESOURCE_UUID='ywgo4w8sk8ggc8w0ooksog0k'
+2025-Dec-29 14:06:36.021349 ----------------------------------------
+2025-Dec-29 14:06:36.028036 Building docker image started.
+2025-Dec-29 14:06:36.034380 To check the current progress, click on Show Debug Logs.
+2025-Dec-29 14:06:36.479390 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'nixpacks build -c /artifacts/thegameplan.json --cache-key 'ywgo4w8sk8ggc8w0ooksog0k' --no-error-without-start -n ywgo4w8sk8ggc8w0ooksog0k:170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5 /artifacts/ugowcgog4w08skogwo4cwcko -o /artifacts/ugowcgog4w08skogwo4cwcko'
+2025-Dec-29 14:06:36.479390
+2025-Dec-29 14:06:36.479390 ╔═════════════════════ Nixpacks v1.41.0 ═════════════════════╗
+2025-Dec-29 14:06:36.479390 ║ setup │ nodejs_22, npm-9_x, openssl, curl, wget ║
+2025-Dec-29 14:06:36.479390 ║────────────────────────────────────────────────────────────║
+2025-Dec-29 14:06:36.479390 ║ caddy │ pkgs: caddy ║
+2025-Dec-29 14:06:36.479390 ║ │ cmds: caddy fmt --overwrite /assets/Caddyfile ║
+2025-Dec-29 14:06:36.479390 ║────────────────────────────────────────────────────────────║
+2025-Dec-29 14:06:36.479390 ║ install │ npm ci ║
+2025-Dec-29 14:06:36.479390 ║────────────────────────────────────────────────────────────║
+2025-Dec-29 14:06:36.479390 ║ build │ npm run build ║
+2025-Dec-29 14:06:36.479390 ║────────────────────────────────────────────────────────────║
+2025-Dec-29 14:06:36.479390 ║ start │ npm start ║
+2025-Dec-29 14:06:36.479390 ╚════════════════════════════════════════════════════════════╝
+2025-Dec-29 14:06:36.491417 Saved output to:
+2025-Dec-29 14:06:36.491417 /artifacts/ugowcgog4w08skogwo4cwcko
+2025-Dec-29 14:06:36.681064 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'cat /artifacts/ugowcgog4w08skogwo4cwcko/.nixpacks/Dockerfile'
+2025-Dec-29 14:06:36.681064 FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 ENTRYPOINT ["/bin/bash", "-l", "-c"]
+2025-Dec-29 14:06:36.681064 WORKDIR /app/
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 COPY .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix
+2025-Dec-29 14:06:36.681064 RUN nix-env -if .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix && nix-collect-garbage -d
+2025-Dec-29 14:06:36.681064 COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+2025-Dec-29 14:06:36.681064 RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+2025-Dec-29 14:06:36.681064 RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends curl wget
+2025-Dec-29 14:06:36.681064 COPY .nixpacks/assets /assets/
+2025-Dec-29 14:06:36.681064 ARG CI COOLIFY_BRANCH COOLIFY_FQDN COOLIFY_RESOURCE_UUID COOLIFY_URL NIXPACKS_METADATA NIXPACKS_NODE_VERSION NIXPACKS_SPA_OUTPUT_DIR NODE_ENV NPM_CONFIG_PRODUCTION
+2025-Dec-29 14:06:36.681064 ENV CI=$CI COOLIFY_BRANCH=$COOLIFY_BRANCH COOLIFY_FQDN=$COOLIFY_FQDN COOLIFY_RESOURCE_UUID=$COOLIFY_RESOURCE_UUID COOLIFY_URL=$COOLIFY_URL NIXPACKS_METADATA=$NIXPACKS_METADATA NIXPACKS_NODE_VERSION=$NIXPACKS_NODE_VERSION NIXPACKS_SPA_OUTPUT_DIR=$NIXPACKS_SPA_OUTPUT_DIR NODE_ENV=$NODE_ENV NPM_CONFIG_PRODUCTION=$NPM_CONFIG_PRODUCTION
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 # setup phase
+2025-Dec-29 14:06:36.681064 # noop
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 # caddy phase
+2025-Dec-29 14:06:36.681064 COPY . /app/.
+2025-Dec-29 14:06:36.681064 RUN caddy fmt --overwrite /assets/Caddyfile
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 # install phase
+2025-Dec-29 14:06:36.681064 ENV NIXPACKS_PATH=/app/node_modules/.bin:$NIXPACKS_PATH
+2025-Dec-29 14:06:36.681064 COPY . /app/.
+2025-Dec-29 14:06:36.681064 RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-/root/npm,target=/root/.npm npm ci
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 # build phase
+2025-Dec-29 14:06:36.681064 COPY . /app/.
+2025-Dec-29 14:06:36.681064 RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 RUN printf '\nPATH=/app/node_modules/.bin:$PATH' >> /root/.profile
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 # start
+2025-Dec-29 14:06:36.681064 COPY . /app
+2025-Dec-29 14:06:36.681064
+2025-Dec-29 14:06:36.681064 CMD ["npm start"]
+2025-Dec-29 14:06:37.100831 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'cat /artifacts/build.sh'
+2025-Dec-29 14:06:37.100831 cd /artifacts/ugowcgog4w08skogwo4cwcko && set -a && source /artifacts/build-time.env && set +a && docker build --add-host coolify:10.0.1.6 --add-host coolify-db:10.0.1.3 --add-host coolify-realtime:10.0.1.4 --add-host coolify-redis:10.0.1.5 --network host -f /artifacts/ugowcgog4w08skogwo4cwcko/.nixpacks/Dockerfile --progress plain -t ywgo4w8sk8ggc8w0ooksog0k:170b34c0f3fce0c20ef1bfd8a30bfb820d6eedd5 --build-arg CI --build-arg COOLIFY_BRANCH --build-arg COOLIFY_FQDN --build-arg COOLIFY_RESOURCE_UUID --build-arg COOLIFY_URL --build-arg NIXPACKS_METADATA --build-arg NIXPACKS_NODE_VERSION --build-arg NIXPACKS_SPA_OUTPUT_DIR --build-arg NODE_ENV --build-arg NPM_CONFIG_PRODUCTION --build-arg COOLIFY_BUILD_SECRETS_HASH=84e8ab22cd69e20508726a5b64527d0bf16d5069036d3da6e0ea50c6e040573b --build-arg 'COOLIFY_URL' --build-arg 'COOLIFY_FQDN' --build-arg 'COOLIFY_BRANCH' --build-arg 'COOLIFY_RESOURCE_UUID' /artifacts/ugowcgog4w08skogwo4cwcko
+2025-Dec-29 14:06:37.869833 [CMD]: docker exec ugowcgog4w08skogwo4cwcko bash -c 'bash /artifacts/build.sh'
+2025-Dec-29 14:06:37.869833 #0 building with "default" instance using docker driver
+2025-Dec-29 14:06:37.869833
+2025-Dec-29 14:06:37.869833 #1 [internal] load build definition from Dockerfile
+2025-Dec-29 14:06:37.869833 #1 transferring dockerfile: 1.76kB done
+2025-Dec-29 14:06:37.869833 #1 DONE 0.0s
+2025-Dec-29 14:06:37.869833
+2025-Dec-29 14:06:37.869833 #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+2025-Dec-29 14:06:38.080508 #2 DONE 0.4s
+2025-Dec-29 14:06:38.248773 #3 [internal] load .dockerignore
+2025-Dec-29 14:06:38.248773 #3 transferring context: 2B done
+2025-Dec-29 14:06:38.248773 #3 DONE 0.0s
+2025-Dec-29 14:06:38.248773
+2025-Dec-29 14:06:38.248773 #4 [internal] load build context
+2025-Dec-29 14:06:38.450031 #4 ...
+2025-Dec-29 14:06:38.450031
+2025-Dec-29 14:06:38.450031 #5 [stage-0 1/16] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+2025-Dec-29 14:06:38.450031 #5 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.1s done
+2025-Dec-29 14:06:38.450031 #5 DONE 0.2s
+2025-Dec-29 14:06:38.450031
+2025-Dec-29 14:06:38.450031 #4 [internal] load build context
+2025-Dec-29 14:06:38.965448 #4 transferring context: 42.58MB 0.7s done
+2025-Dec-29 14:06:38.971988 #4 DONE 0.8s
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #6 [stage-0 4/16] RUN nix-env -if .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix && nix-collect-garbage -d
+2025-Dec-29 14:06:38.971988 #6 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #7 [stage-0 5/16] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+2025-Dec-29 14:06:38.971988 #7 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #8 [stage-0 6/16] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+2025-Dec-29 14:06:38.971988 #8 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #9 [stage-0 7/16] RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends curl wget
+2025-Dec-29 14:06:38.971988 #9 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #10 [stage-0 2/16] WORKDIR /app/
+2025-Dec-29 14:06:38.971988 #10 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #11 [stage-0 3/16] COPY .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix
+2025-Dec-29 14:06:38.971988 #11 CACHED
+2025-Dec-29 14:06:38.971988
+2025-Dec-29 14:06:38.971988 #12 [stage-0 8/16] COPY .nixpacks/assets /assets/
+2025-Dec-29 14:06:39.132902 #12 CACHED
+2025-Dec-29 14:06:39.132902
+2025-Dec-29 14:06:39.132902 #13 [stage-0 9/16] COPY . /app/.
+2025-Dec-29 14:06:39.587846 #13 DONE 0.6s
+2025-Dec-29 14:06:39.742760 #14 [stage-0 10/16] RUN caddy fmt --overwrite /assets/Caddyfile
+2025-Dec-29 14:06:40.124702 #14 DONE 0.5s
+2025-Dec-29 14:06:40.284115 #15 [stage-0 11/16] COPY . /app/.
+2025-Dec-29 14:06:40.579473 #15 DONE 0.4s
+2025-Dec-29 14:06:40.730067 #16 [stage-0 12/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-/root/npm,target=/root/.npm npm ci
+2025-Dec-29 14:06:40.857979 #16 0.279 npm warn config production Use `--omit=dev` instead.
+2025-Dec-29 14:06:40.863724
+2025-Dec-29 14:06:54.324432 #16 13.74 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-Dec-29 14:06:54.593156 #16 14.01 npm warn deprecated @hapi/formula@2.0.0: Moved to 'npm install @sideway/formula'
+2025-Dec-29 14:06:54.807980 #16 14.23 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-Dec-29 14:06:55.166233 #16 14.59 npm warn deprecated @hapi/address@4.1.0: Moved to 'npm install @sideway/address'
+2025-Dec-29 14:06:56.417088 #16 15.84 npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-Dec-29 14:06:56.424860
+2025-Dec-29 14:06:57.569911 #16 16.99 npm warn deprecated @hapi/joi@17.1.1: Switch to 'npm install joi'
+2025-Dec-29 14:07:21.734536 #16 41.12
+2025-Dec-29 14:07:21.734536 #16 41.12 added 785 packages, and audited 786 packages in 41s
+2025-Dec-29 14:07:21.734536 #16 41.12
+2025-Dec-29 14:07:21.734536 #16 41.12 81 packages are looking for funding
+2025-Dec-29 14:07:21.734536 #16 41.12 run `npm fund` for details
+2025-Dec-29 14:07:21.934051 #16 41.20
+2025-Dec-29 14:07:21.934051 #16 41.20 13 vulnerabilities (3 low, 7 moderate, 3 high)
+2025-Dec-29 14:07:21.934051 #16 41.20
+2025-Dec-29 14:07:21.934051 #16 41.20 To address issues that do not require attention, run:
+2025-Dec-29 14:07:21.934051 #16 41.20 npm audit fix
+2025-Dec-29 14:07:21.934051 #16 41.20
+2025-Dec-29 14:07:21.946180 #16 41.20 To address all issues (including breaking changes), run:
+2025-Dec-29 14:07:21.946180 #16 41.20 npm audit fix --force
+2025-Dec-29 14:07:21.946180 #16 41.20
+2025-Dec-29 14:07:21.946180 #16 41.20 Run `npm audit` for details.
+2025-Dec-29 14:07:22.637925 #16 DONE 42.0s
+2025-Dec-29 14:07:22.789076 #17 [stage-0 13/16] COPY . /app/.
+2025-Dec-29 14:07:25.566919 #17 DONE 2.9s
+2025-Dec-29 14:07:25.723044 #18 [stage-0 14/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build
+2025-Dec-29 14:07:26.066269 #18 0.496 npm warn config production Use `--omit=dev` instead.
+2025-Dec-29 14:07:26.254866 #18 0.533
+2025-Dec-29 14:07:26.254866 #18 0.533 > rest-express@1.0.0 build
+2025-Dec-29 14:07:26.254866 #18 0.533 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-Dec-29 14:07:26.254866 #18 0.533
+2025-Dec-29 14:07:26.586250 #18 1.016 vite v5.4.19 building for production...
+2025-Dec-29 14:07:26.820249 #18 1.099 transforming...
+2025-Dec-29 14:07:39.065830 #18 13.49 ✓ 1795 modules transformed.
+2025-Dec-29 14:07:39.238864 #18 13.51 x Build failed in 12.45s
+2025-Dec-29 14:07:39.238864 #18 13.51 error during build:
+2025-Dec-29 14:07:39.238864 #18 13.51 [vite]: Rollup failed to resolve import "docx" from "/app/client/src/lib/word-generator.ts".
+2025-Dec-29 14:07:39.238864 #18 13.51 This is most likely unintended because it can break your application at runtime.
+2025-Dec-29 14:07:39.238864 #18 13.51 If you do want to externalize this module explicitly add it to
+2025-Dec-29 14:07:39.238864 #18 13.51 `build.rollupOptions.external`
+2025-Dec-29 14:07:39.238864 #18 13.51 at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+2025-Dec-29 14:07:39.238864 #18 13.51 at onwarn (file:///app/node_modules/@vitejs/plugin-react/dist/index.mjs:280:9)
+2025-Dec-29 14:07:39.238864 #18 13.51 at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+2025-Dec-29 14:07:39.238864 #18 13.51 at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+2025-Dec-29 14:07:39.238864 #18 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:19452:13
+2025-Dec-29 14:07:39.238864 #18 13.51 at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21178:9)
+2025-Dec-29 14:07:39.238864 #18 13.51 at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20067:26)
+2025-Dec-29 14:07:39.238864 #18 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20025:26
+2025-Dec-29 14:07:39.254445 #18 ERROR: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+2025-Dec-29 14:07:39.353316 ------
+2025-Dec-29 14:07:39.353316 > [stage-0 14/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build:
+2025-Dec-29 14:07:39.353316 13.51 If you do want to externalize this module explicitly add it to
+2025-Dec-29 14:07:39.353316 13.51 `build.rollupOptions.external`
+2025-Dec-29 14:07:39.353316 13.51 at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+2025-Dec-29 14:07:39.353316 13.51 at onwarn (file:///app/node_modules/@vitejs/plugin-react/dist/index.mjs:280:9)
+2025-Dec-29 14:07:39.353316 13.51 at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+2025-Dec-29 14:07:39.353316 13.51 at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+2025-Dec-29 14:07:39.353316 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:19452:13
+2025-Dec-29 14:07:39.353316 13.51 at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21178:9)
+2025-Dec-29 14:07:39.353316 13.51 at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20067:26)
+2025-Dec-29 14:07:39.353316 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20025:26
+2025-Dec-29 14:07:39.353316 ------
+2025-Dec-29 14:07:39.358328 1 warning found (use docker --debug to expand):
+2025-Dec-29 14:07:39.358328 - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 24)
+2025-Dec-29 14:07:39.369882 Dockerfile:30
+2025-Dec-29 14:07:39.369882 --------------------
+2025-Dec-29 14:07:39.379361 28 | # build phase
+2025-Dec-29 14:07:39.379361 29 | COPY . /app/.
+2025-Dec-29 14:07:39.379361 30 | >>> RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build
+2025-Dec-29 14:07:39.379361 31 |
+2025-Dec-29 14:07:39.379361 32 |
+2025-Dec-29 14:07:39.379361 --------------------
+2025-Dec-29 14:07:39.379361 ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+2025-Dec-29 14:07:39.404373 exit status 1
+2025-Dec-29 14:07:39.562925 ========================================
+2025-Dec-29 14:07:39.571598 Deployment failed: Command execution failed (exit code 1): docker exec ugowcgog4w08skogwo4cwcko bash -c 'bash /artifacts/build.sh'
+2025-Dec-29 14:07:39.571598 Error: #0 building with "default" instance using docker driver
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #1 [internal] load build definition from Dockerfile
+2025-Dec-29 14:07:39.571598 #1 transferring dockerfile: 1.76kB done
+2025-Dec-29 14:07:39.571598 #1 DONE 0.0s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+2025-Dec-29 14:07:39.571598 #2 DONE 0.4s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #3 [internal] load .dockerignore
+2025-Dec-29 14:07:39.571598 #3 transferring context: 2B done
+2025-Dec-29 14:07:39.571598 #3 DONE 0.0s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #4 [internal] load build context
+2025-Dec-29 14:07:39.571598 #4 ...
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #5 [stage-0 1/16] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+2025-Dec-29 14:07:39.571598 #5 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.1s done
+2025-Dec-29 14:07:39.571598 #5 DONE 0.2s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #4 [internal] load build context
+2025-Dec-29 14:07:39.571598 #4 transferring context: 42.58MB 0.7s done
+2025-Dec-29 14:07:39.571598 #4 DONE 0.8s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #6 [stage-0 4/16] RUN nix-env -if .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix && nix-collect-garbage -d
+2025-Dec-29 14:07:39.571598 #6 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #7 [stage-0 5/16] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+2025-Dec-29 14:07:39.571598 #7 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #8 [stage-0 6/16] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+2025-Dec-29 14:07:39.571598 #8 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #9 [stage-0 7/16] RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends curl wget
+2025-Dec-29 14:07:39.571598 #9 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #10 [stage-0 2/16] WORKDIR /app/
+2025-Dec-29 14:07:39.571598 #10 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #11 [stage-0 3/16] COPY .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix
+2025-Dec-29 14:07:39.571598 #11 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #12 [stage-0 8/16] COPY .nixpacks/assets /assets/
+2025-Dec-29 14:07:39.571598 #12 CACHED
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #13 [stage-0 9/16] COPY . /app/.
+2025-Dec-29 14:07:39.571598 #13 DONE 0.6s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #14 [stage-0 10/16] RUN caddy fmt --overwrite /assets/Caddyfile
+2025-Dec-29 14:07:39.571598 #14 DONE 0.5s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #15 [stage-0 11/16] COPY . /app/.
+2025-Dec-29 14:07:39.571598 #15 DONE 0.4s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #16 [stage-0 12/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-/root/npm,target=/root/.npm npm ci
+2025-Dec-29 14:07:39.571598 #16 0.279 npm warn config production Use `--omit=dev` instead.
+2025-Dec-29 14:07:39.571598 #16 13.74 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-Dec-29 14:07:39.571598 #16 14.01 npm warn deprecated @hapi/formula@2.0.0: Moved to 'npm install @sideway/formula'
+2025-Dec-29 14:07:39.571598 #16 14.23 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-Dec-29 14:07:39.571598 #16 14.59 npm warn deprecated @hapi/address@4.1.0: Moved to 'npm install @sideway/address'
+2025-Dec-29 14:07:39.571598 #16 15.84 npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-Dec-29 14:07:39.571598 #16 16.99 npm warn deprecated @hapi/joi@17.1.1: Switch to 'npm install joi'
+2025-Dec-29 14:07:39.571598 #16 41.12
+2025-Dec-29 14:07:39.571598 #16 41.12 added 785 packages, and audited 786 packages in 41s
+2025-Dec-29 14:07:39.571598 #16 41.12
+2025-Dec-29 14:07:39.571598 #16 41.12 81 packages are looking for funding
+2025-Dec-29 14:07:39.571598 #16 41.12 run `npm fund` for details
+2025-Dec-29 14:07:39.571598 #16 41.20
+2025-Dec-29 14:07:39.571598 #16 41.20 13 vulnerabilities (3 low, 7 moderate, 3 high)
+2025-Dec-29 14:07:39.571598 #16 41.20
+2025-Dec-29 14:07:39.571598 #16 41.20 To address issues that do not require attention, run:
+2025-Dec-29 14:07:39.571598 #16 41.20 npm audit fix
+2025-Dec-29 14:07:39.571598 #16 41.20
+2025-Dec-29 14:07:39.571598 #16 41.20 To address all issues (including breaking changes), run:
+2025-Dec-29 14:07:39.571598 #16 41.20 npm audit fix --force
+2025-Dec-29 14:07:39.571598 #16 41.20
+2025-Dec-29 14:07:39.571598 #16 41.20 Run `npm audit` for details.
+2025-Dec-29 14:07:39.571598 #16 DONE 42.0s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #17 [stage-0 13/16] COPY . /app/.
+2025-Dec-29 14:07:39.571598 #17 DONE 2.9s
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 #18 [stage-0 14/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build
+2025-Dec-29 14:07:39.571598 #18 0.496 npm warn config production Use `--omit=dev` instead.
+2025-Dec-29 14:07:39.571598 #18 0.533
+2025-Dec-29 14:07:39.571598 #18 0.533 > rest-express@1.0.0 build
+2025-Dec-29 14:07:39.571598 #18 0.533 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-Dec-29 14:07:39.571598 #18 0.533
+2025-Dec-29 14:07:39.571598 #18 1.016 vite v5.4.19 building for production...
+2025-Dec-29 14:07:39.571598 #18 1.099 transforming...
+2025-Dec-29 14:07:39.571598 #18 13.49 ✓ 1795 modules transformed.
+2025-Dec-29 14:07:39.571598 #18 13.51 x Build failed in 12.45s
+2025-Dec-29 14:07:39.571598 #18 13.51 error during build:
+2025-Dec-29 14:07:39.571598 #18 13.51 [vite]: Rollup failed to resolve import "docx" from "/app/client/src/lib/word-generator.ts".
+2025-Dec-29 14:07:39.571598 #18 13.51 This is most likely unintended because it can break your application at runtime.
+2025-Dec-29 14:07:39.571598 #18 13.51 If you do want to externalize this module explicitly add it to
+2025-Dec-29 14:07:39.571598 #18 13.51 `build.rollupOptions.external`
+2025-Dec-29 14:07:39.571598 #18 13.51 at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+2025-Dec-29 14:07:39.571598 #18 13.51 at onwarn (file:///app/node_modules/@vitejs/plugin-react/dist/index.mjs:280:9)
+2025-Dec-29 14:07:39.571598 #18 13.51 at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+2025-Dec-29 14:07:39.571598 #18 13.51 at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+2025-Dec-29 14:07:39.571598 #18 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:19452:13
+2025-Dec-29 14:07:39.571598 #18 13.51 at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21178:9)
+2025-Dec-29 14:07:39.571598 #18 13.51 at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20067:26)
+2025-Dec-29 14:07:39.571598 #18 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20025:26
+2025-Dec-29 14:07:39.571598 #18 ERROR: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+2025-Dec-29 14:07:39.571598 ------
+2025-Dec-29 14:07:39.571598 > [stage-0 14/16] RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build:
+2025-Dec-29 14:07:39.571598 13.51 If you do want to externalize this module explicitly add it to
+2025-Dec-29 14:07:39.571598 13.51 `build.rollupOptions.external`
+2025-Dec-29 14:07:39.571598 13.51 at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+2025-Dec-29 14:07:39.571598 13.51 at onwarn (file:///app/node_modules/@vitejs/plugin-react/dist/index.mjs:280:9)
+2025-Dec-29 14:07:39.571598 13.51 at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+2025-Dec-29 14:07:39.571598 13.51 at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+2025-Dec-29 14:07:39.571598 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:19452:13
+2025-Dec-29 14:07:39.571598 13.51 at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21178:9)
+2025-Dec-29 14:07:39.571598 13.51 at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20067:26)
+2025-Dec-29 14:07:39.571598 13.51 at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20025:26
+2025-Dec-29 14:07:39.571598 ------
+2025-Dec-29 14:07:39.571598
+2025-Dec-29 14:07:39.571598 1 warning found (use docker --debug to expand):
+2025-Dec-29 14:07:39.571598 - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 24)
+2025-Dec-29 14:07:39.571598 Dockerfile:30
+2025-Dec-29 14:07:39.571598 --------------------
+2025-Dec-29 14:07:39.571598 28 | # build phase
+2025-Dec-29 14:07:39.571598 29 | COPY . /app/.
+2025-Dec-29 14:07:39.571598 30 | >>> RUN --mount=type=cache,id=ywgo4w8sk8ggc8w0ooksog0k-node_modules/cache,target=/app/node_modules/.cache npm run build
+2025-Dec-29 14:07:39.571598 31 |
+2025-Dec-29 14:07:39.571598 32 |
+2025-Dec-29 14:07:39.571598 --------------------
+2025-Dec-29 14:07:39.571598 ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+2025-Dec-29 14:07:39.571598 exit status 1
+2025-Dec-29 14:07:39.578666 Error type: RuntimeException
+2025-Dec-29 14:07:39.585904 Error code: 0
+2025-Dec-29 14:07:39.593560 Location: /var/www/html/app/Traits/ExecuteRemoteCommand.php:243
+2025-Dec-29 14:07:39.600408 Stack trace (first 5 lines):
+2025-Dec-29 14:07:39.607949 #0 /var/www/html/app/Traits/ExecuteRemoteCommand.php(104): App\Jobs\ApplicationDeploymentJob->executeCommandWithProcess()
+2025-Dec-29 14:07:39.616598 #1 /var/www/html/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php(271): App\Jobs\ApplicationDeploymentJob->{closure:App\Traits\ExecuteRemoteCommand::execute_remote_command():71}()
+2025-Dec-29 14:07:39.625198 #2 /var/www/html/app/Traits/ExecuteRemoteCommand.php(71): Illuminate\Support\Collection->each()
+2025-Dec-29 14:07:39.633041 #3 /var/www/html/app/Jobs/ApplicationDeploymentJob.php(3109): App\Jobs\ApplicationDeploymentJob->execute_remote_command()
+2025-Dec-29 14:07:39.640625 #4 /var/www/html/app/Jobs/ApplicationDeploymentJob.php(895): App\Jobs\ApplicationDeploymentJob->build_image()
+2025-Dec-29 14:07:39.648134 ========================================
+2025-Dec-29 14:07:39.655740 Deployment failed. Removing the new version of your application.
+2025-Dec-29 14:07:40.235343 Gracefully shutting down build container: ugowcgog4w08skogwo4cwcko

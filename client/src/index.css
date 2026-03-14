@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(140, 20%, 96%); /* #F4F9F5 - Soft off-white green tint */
+  --foreground: hsl(140, 40%, 15%); /* Dark gray-green */
+  --card: hsl(140, 20%, 96%); /* Match background for neumorphism */
+  --card-foreground: hsl(140, 40%, 15%);
+  --popover: hsl(140, 20%, 96%);
+  --popover-foreground: hsl(140, 40%, 15%);
+  --primary: hsl(140, 75%, 36%); /* #16A34A - Vibrant Green */
+  --primary-foreground: hsl(0, 0%, 100%); /* White */
+  --secondary: hsl(140, 15%, 85%);
+  --secondary-foreground: hsl(140, 40%, 15%);
+  --muted: hsl(140, 15%, 88%);
+  --muted-foreground: hsl(140, 20%, 40%);
+  --accent: hsl(140, 75%, 36%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 55%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: transparent; /* Neumorphism relies on shadows, not borders */
+  --input: hsl(140, 20%, 96%);
+  --ring: hsl(140, 75%, 36%);
+  
+  /* Chart Colors */
+  --chart-1: hsl(140, 75%, 36%);
+  --chart-2: hsl(140, 60%, 45%);
+  --chart-3: hsl(140, 40%, 55%);
+  --chart-4: hsl(140, 30%, 65%);
+  --chart-5: hsl(140, 20%, 75%);
+  
+  --sidebar: hsl(140, 20%, 96%);
+  --sidebar-foreground: hsl(140, 40%, 15%);
+  --sidebar-primary: hsl(140, 75%, 36%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(140, 15%, 85%);
+  --sidebar-accent-foreground: hsl(140, 75%, 36%);
+  --sidebar-border: transparent;
+  --sidebar-ring: hsl(140, 75%, 36%);
+  
+  --font-sans: 'Plus Jakarta Sans', 'DM Sans', Inter, system-ui, sans-serif;
+  --radius: 32px; /* Very soft corners */
+}
+
+/* Base Dark Mode (kept for compatibility, but Neumorphism shines in light mode) */
+.dark {
+  --background: hsl(140, 20%, 10%); 
+  --foreground: hsl(140, 15%, 85%);
+  --card: hsl(140, 20%, 10%);
+  --card-foreground: hsl(140, 15%, 85%);
+  --popover: hsl(140, 20%, 10%);
+  --popover-foreground: hsl(140, 15%, 85%);
+  --primary: hsl(140, 60%, 40%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(140, 15%, 15%);
+  --secondary-foreground: hsl(140, 15%, 85%);
+  --muted: hsl(140, 15%, 15%);
+  --muted-foreground: hsl(140, 10%, 60%);
+  --accent: hsl(140, 60%, 40%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 40%);
+  --destructive-foreground: hsl(0, 0%, 90%);
+  --border: transparent;
+  --input: hsl(140, 20%, 10%);
+  --ring: hsl(140, 60%, 40%);
+  
+  --sidebar: hsl(140, 20%, 10%);
+  --sidebar-foreground: hsl(140, 15%, 85%);
+  --sidebar-primary: hsl(140, 60%, 40%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(140, 15%, 15%);
+  --sidebar-accent-foreground: hsl(140, 60%, 40%);
+  --sidebar-border: transparent;
+  --sidebar-ring: hsl(140, 60%, 40%);
+}
+
+@layer utilities {
+  /* Neumorphism Base Utility Classes (Green & White Palette) */
+  .neo-extruded {
+    box-shadow: 9px 9px 16px rgba(170, 190, 175, 0.4), -9px -9px 16px rgba(255, 255, 255, 0.8);
+    background-color: var(--background);
+  }
+  
+  .dark .neo-extruded {
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.6), -9px -9px 16px rgba(40, 50, 45, 0.4);
+  }
+
+  .neo-extruded-hover {
+    box-shadow: 12px 12px 20px rgba(170, 190, 175, 0.5), -12px -12px 20px rgba(255, 255, 255, 0.9);
+    background-color: var(--background);
+  }
+
+  .dark .neo-extruded-hover {
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.7), -12px -12px 20px rgba(40, 50, 45, 0.5);
+  }
+
+  .neo-inset {
+    box-shadow: inset 6px 6px 10px rgba(170, 190, 175, 0.4), inset -6px -6px 10px rgba(255, 255, 255, 0.8);
+    background-color: var(--background);
+  }
+  
+  .dark .neo-inset {
+    box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.6), inset -6px -6px 10px rgba(40, 50, 45, 0.4);
+  }
+
+  .neo-inset-deep {
+    box-shadow: inset 10px 10px 20px rgba(170, 190, 175, 0.5), inset -10px -10px 20px rgba(255, 255, 255, 0.9);
+    background-color: var(--background);
+  }
+
+  .dark .neo-inset-deep {
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.7), inset -10px -10px 20px rgba(40, 50, 45, 0.5);
+  }
+  
+  /* Buttons Specific */
+  .neo-btn {
+    box-shadow: 5px 5px 10px rgba(170, 190, 175, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-out;
+  }
+  
+  .neo-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 7px 7px 14px rgba(170, 190, 175, 0.5), -7px -7px 14px rgba(255, 255, 255, 0.9);
+  }
+  
+  .neo-btn:active {
+    transform: translateY(1px);
+    box-shadow: inset 3px 3px 6px rgba(170, 190, 175, 0.5), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+  }
+
+  /* Global Fix for Primary Action Buttons visibility */
+  button.neo-btn.text-primary,
+  button.neo-btn.bg-primary,
+  a.neo-btn.text-primary,
+  a.neo-btn.bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+  }
+  
+  button.neo-btn.text-primary svg,
+  button.neo-btn.bg-primary svg,
+  a.neo-btn.text-primary svg,
+  a.neo-btn.bg-primary svg {
+    color: var(--primary-foreground) !important;
+  }
+
+  /* Global Fix for Destructive Action Buttons visibility */
+  button.neo-btn.text-destructive,
+  button.neo-btn.bg-destructive,
+  a.neo-btn.text-destructive,
+  a.neo-btn.bg-destructive {
+    background-color: var(--destructive) !important;
+    color: var(--destructive-foreground) !important;
+  }
+
+  button.neo-btn.text-destructive svg,
+  button.neo-btn.bg-destructive svg,
+  a.neo-btn.text-destructive svg,
+  a.neo-btn.bg-destructive svg {
+    color: var(--destructive-foreground) !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom styles for the travel management app */
+.active-nav {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(135deg, var(--chart-1), var(--chart-2));
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.mock-chart {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes tutorial-wave {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+.animate-tutorial-wave {
+  animation: tutorial-wave 1.5s ease-in-out infinite;
+}
+
+/* Enhanced button animations and bubble styles */
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Enhanced notification animations */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Global button enhancements */
+button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Smooth scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-emerald-200 {
+  scrollbar-color: rgb(167 243 208) transparent;
+}
+
+.dark .scrollbar-thumb-emerald-800 {
+  scrollbar-color: rgb(6 95 70) transparent;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+

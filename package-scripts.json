@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "manage-vadmin": "NODE_ENV=development tsx scripts/manage-vadmin-users.js"
+  }
+}
