@@ -1,0 +1,137 @@
+{
+  "funcionarios": {
+    "-Oghtz8ZBB4dORYqfr-X": {
+      "address": "Avenida São Patrício, Cidade Jardim",
+      "birthdate": "2009-06-26T00:00:00.000Z",
+      "cpf": "004.729.106-04",
+      "created_at": "2025-12-17T20:02:14.263Z",
+      "curriculum_url": "",
+      "department": "Ti",
+      "education_level": "medio",
+      "email": "iyed@rodabemturismo.com",
+      "facebook": "",
+      "first_name": "Iyed",
+      "hire_date": "2025-11-03T00:00:00.000Z",
+      "id": "-Oghtz8ZBB4dORYqfr-X",
+      "instagram": "@iyedjebara",
+      "is_active": true,
+      "last_name": "Jebara",
+      "linkedin": "",
+      "nationality": "Tunísia",
+      "personal_story": "",
+      "phone": "31992367314",
+      "photo_url": "",
+      "position": "Programador",
+      "salary": 900,
+      "trial_period_days": 90,
+      "updated_at": "2025-12-17T20:02:14.263Z"
+    },
+    "-OhBZ41TCy8Y4ub5EmHw": {
+      "address": "Rua Rio Paracatu 85, Dona Guilhermina Ap 101",
+      "birthdate": "2007-09-19T00:00:00.000Z",
+      "cpf": "139.466.576-80",
+      "created_at": "2025-12-23T18:54:44.953Z",
+      "curriculum_url": "",
+      "department": "Experiência",
+      "education_level": "medio",
+      "email": "claracristine19@gmail.com",
+      "facebook": "Clara Cristine",
+      "first_name": "Clara Cristine",
+      "hire_date": "2025-12-23T18:45:32.868Z",
+      "id": "-OhBZ41TCy8Y4ub5EmHw",
+      "instagram": "@claracristine_rs",
+      "is_active": false,
+      "last_name": "Rosa Da Silva",
+      "linkedin": "",
+      "nationality": "Brasileira",
+      "personal_story": "Meu Nome É Clara E Tenho 18 Anos. Meu Nível De Escolaridade É Ensino Médio Completo. Ao Longo Da Minha Vida Fiz Diversos Cursos Como Técnico De Informática, Técnico Em Desenvolvimento De Sistema, Inglês, Curso De Assistente Administrativo, Já Participei De Competições De Tecnologia. Hoje Estou Em Busca Do Meu Primeiro Emprego",
+      "phone": "34992028196",
+      "photo_url": "",
+      "position": "Experiência",
+      "salary": 1,
+      "specializations": [
+        {
+          "date": "2026-04-23T00:00:00.000Z",
+          "title": "Técnico De Informática"
+        },
+        {
+          "date": "2025-10-27T00:00:00.000Z",
+          "title": "Técnico Em Desenvolvimento De Sistemas"
+        },
+        {
+          "date": "2023-11-07T00:00:00.000Z",
+          "title": "Inglês"
+        },
+        {
+          "date": "2022-11-21T00:00:00.000Z",
+          "title": "Assistente Administrativo"
+        }
+      ],
+      "termination_date": "2026-01-05T17:02:14.121Z",
+      "termination_reason": ",",
+      "trial_period_days": 1,
+      "updated_at": "2026-01-05T17:02:14.121Z"
+    },
+    "-OhB_6x-dxjTJRQMRGZ_": {
+      "address": "Rua Teodoro De Paula 399 , Refúgio Dos Tropeiros - Esmeraldas/ Mg ",
+      "birthdate": "2006-04-06T00:00:00.000Z",
+      "cpf": "148.577.446-27",
+      "created_at": "2025-12-23T18:59:19.035Z",
+      "curriculum_url": "",
+      "department": "Atendimento ",
+      "education_level": "medio",
+      "effective_date": "2025-11-24T00:00:00.000Z",
+      "facebook": "Kawany Gabriele",
+      "first_name": "Kawany",
+      "hire_date": "2025-11-24T00:00:00.000Z",
+      "id": "-OhB_6x-dxjTJRQMRGZ_",
+      "instagram": "Kawany-gabriele_",
+      "is_active": false,
+      "last_name": "Gabriele Gomes Dos Santos ",
+      "linkedin": "",
+      "nationality": "Brasileira",
+      "personal_story": "Forma No Ensino Médio , Fazer Faculidade De Fisioterapia , Tira Minha C N H  , Viagar , Conhecer Coisas Novas .",
+      "phone": "(31)994489299",
+      "photo_url": "",
+      "position": "Atendente ",
+      "salary": 0.01,
+      "specializations": [
+        {
+          "title": "Atendimento Ao Cliente- Fundaçao Bradesco Atendimento "
+        }
+      ],
+      "termination_date": "2025-12-23T19:00:34.622Z",
+      "termination_reason": "Descompatibilidade De Função ",
+      "trial_period_days": 30,
+      "updated_at": "2026-01-05T17:02:04.351Z"
+    },
+    "-OhBvfnzFjaRPTmyVwts": {
+      "address": "Rua Santa Maria Madalena,306, Dumaville",
+      "birthdate": "2008-05-30T00:00:00.000Z",
+      "cpf": "184.468.676-05",
+      "created_at": "2025-12-23T20:37:53.083Z",
+      "curriculum_url": "",
+      "department": "Atendimento",
+      "education_level": "medio",
+      "email": "iasmimhelena09@gmail.com",
+      "evaluation_period_start": "2025-11-10T00:00:00.000Z",
+      "facebook": "@ismim_monteiro",
+      "first_name": "Iasmim Helena",
+      "hire_date": "2025-11-11T00:00:00.000Z",
+      "id": "-OhBvfnzFjaRPTmyVwts",
+      "instagram": "@ismim_monteiro",
+      "is_active": true,
+      "last_name": "Monteiro Da Silva Soares",
+      "linkedin": "",
+      "nationality": "Brasileira",
+      "personal_story": "Possuo Certificado No Projeto Iniciação Científica Realizado Na Escola Estadual Santa  Quitéria No Período De 2023 A 2024\nMeio Horário De 11/11 Ate 17/11  18/11  Começou Período Integral ",
+      "phone": "31 983496731",
+      "photo_url": "",
+      "position": "Atendimento",
+      "salary": 0.99,
+      "trial_period_days": 1,
+      "updated_at": "2026-01-08T20:37:12.418Z"
+    }
+  },
+  "proposals": {}
+}
